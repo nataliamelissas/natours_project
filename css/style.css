@@ -27,5 +27,84 @@ body {
     url("../img/hero.jpg");
   background-size: cover;
   background-position: top;
+  position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+}
+
+.header-text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header-primary {
+  color: #fff;
+  text-transform: uppercase;
+
+  backface-visibility: hidden;
+}
+
+.header-primary-main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 20px;
+
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  /* animation-iteration-count: 3; */
+  /* animation-delay: 3s; */
+}
+
+.header-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 20px;
+
+  /* shorthand version */
+  animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  60% {
+    transform: rotate(120deg);
+  }
+  80% {
+    transform: translate(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translate(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
