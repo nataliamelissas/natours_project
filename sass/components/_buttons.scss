@@ -1,0 +1,106 @@
+.btn {
+    &:link,
+    &.visited {
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.5rem 4rem;
+      display: inline-block;
+      border-radius: 10rem;
+      transition: all 0.2s;
+      position: relative;
+    }
+    &:hover {
+      transform: translate(0, -0.3rem);
+    
+      /* x value, y value, blur of the shadow, color + transparency of shadow */
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+      &::after {
+          transform: scalex(1.4) scaley(1.6);
+          opacity: 0;
+        }
+    }
+
+    &:active {
+      transform: translate(0, -1px);
+      box-shadow: 0 0.5rem 1rem rgba($color-black, 0.4);
+    }
+    &--white {
+      background-color: $color-white;
+      color: $color-grey-dark;
+      &::after {
+          background-color: $color-white;
+      }
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      border-radius: 100px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all 0.4s;         
+    }
+    &--animated {
+      animation: moveInBottom 0.2s ease-in;
+      /* automaticall applies the 0% animation styles before the 100% ones */
+      animation-fill-mode: backwards;
+    }
+}
+
+.btn-text {
+  // display: inline-block;
+  // position: relative;
+  // vertical-align: middle;
+  // transition-property: color;
+  // transition-duration: 0.3s;
+
+  // &:before {
+  //   content: "";
+  //   position: absolute;
+  //   z-index: -1;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   background: $color-primary;
+  //   transform: scaleX(0);
+	// 	transform-origin: 0 50%;
+	// 	transition-property: transform;
+	// 	transition-duration: 1s;
+	// 	transition-timing-function: ease-out;
+  // }
+
+  // &:hover,
+  // &:focus,
+  // &:active {
+  //   background-color: $color-primary;
+  //   color: white;
+
+  //   // &:before {
+  //     transform: scaleX(1);
+  //     transition-timing-function: cubic-bezier(.52,.1,.64,.37,.66);
+  //   // }
+  // }
+
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary; 
+    padding: 1rem;
+  }
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, .15);
+  }
+  &:active {
+
+  }
+}

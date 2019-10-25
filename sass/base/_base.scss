@@ -1,0 +1,20 @@
+*,
+*::after,
+*:before
+ {
+   margin: 0;
+   padding: 0;
+ 
+   /* better practice to set this to inherit here, and to the actual one in .body */
+   /* because it allows for better plugin support */
+   box-sizing: inherit;
+ }
+ 
+ html {
+   font-size: 62.5%; // defines what 1rem is (10px)
+ }
+ 
+ body {            
+   /* this includes the padding and border in the "width"  and "height" */
+   box-sizing: border-box;
+ }
